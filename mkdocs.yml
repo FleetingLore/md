@@ -1,5 +1,5 @@
-site_name: mkdocs-example
-site_url: https://fleetinglore.github.io/mkdocs-example
+site_name: 电子技术基础  模拟部分
+site_url: https://fleetinglore.github.io/md
 
 # 在此处指定目录
 nav:
@@ -22,8 +22,8 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-repo_url: https://github.com/fleetinglore/mkdocs-example
-repo_name: fleetinglore/mkdocs-example
+repo_url: https://github.com/fleetinglore/md
+repo_name: fleetinglore/md
 
 markdown_extensions:
   - pymdownx.arithmatex:
