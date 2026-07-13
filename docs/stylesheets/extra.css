@@ -1,0 +1,163 @@
+/* docs/stylesheets/extra.css */
+
+/* ========================================================================
+   颜色变量定义
+   ======================================================================== */
+:root {
+  --bg:       #737373;   /* 背景灰 (146,146,146) */
+  --text:     #ffffff;   /* 文字白 */
+  --theme:    #6cffca;   /* 主题色 (108,255,202) */
+  --link:     #7f9bff;   /* 链接蓝（最少使用）(127,155,255) */
+  --aux-lit:  #cacaca;   /* 辅助浅灰 (202,202,202) */
+  --aux-mid:  #929292;   /* 辅助中灰 (115,115,115) */
+  --aux-dark: #000000;   /* 辅助黑 (0,0,0) */
+}
+
+/* ========================================================================
+   单一配色方案
+   顶栏深灰  ·  主题色用于强调  ·  链接蓝色最少使用
+   ======================================================================== */
+
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+
+  /* ===== 主色（顶栏 → 深灰） ===== */
+  --md-primary-fg-color:         var(--aux-mid);
+  --md-primary-fg-color--light:  var(--aux-mid);
+  --md-primary-fg-color--dark:   var(--aux-dark);
+  --md-primary-bg-color:         var(--text);
+
+  /* ===== 强调色 → 主题色 ===== */
+  --md-accent-fg-color:          var(--theme);
+  --md-accent-fg-color--light:   var(--theme);
+  --md-accent-fg-color--dark:    var(--theme);
+  --md-accent-bg-color:          var(--aux-dark);
+
+  /* ===== 默认文字 / 背景 ===== */
+  --md-default-fg-color:          var(--text);
+  --md-default-fg-color--light:   var(--aux-lit);
+  --md-default-fg-color--lighter: var(--aux-lit);
+  --md-default-fg-color--lightest: var(--aux-lit);
+  --md-default-bg-color:          var(--bg);
+
+  /* ===== 代码块 ===== */
+  --md-code-fg-color:             var(--text);
+  --md-code-bg-color:             var(--aux-mid);
+  --md-code-hl-color:             var(--theme);
+  --md-code-hl-number-color:      var(--theme);
+  --md-code-hl-special-color:     var(--theme);
+  --md-code-hl-comment-color:     var(--aux-mid);
+  --md-code-hl-keyword-color:     var(--theme);
+  --md-code-hl-string-color:      var(--link);
+  --md-code-hl-name-color:        var(--aux-lit);
+  --md-code-hl-operator-color:    var(--theme);
+  --md-code-hl-punctuation-color: var(--aux-lit);
+
+  /* ===== 正文排版 ===== */
+  --md-typeset-color:             var(--text);
+  --md-typeset-a-color:           var(--link);
+  --md-typeset-mark-color:        var(--theme);
+  --md-typeset-del-color:         var(--theme);
+  --md-typeset-ins-color:         var(--theme);
+  --md-typeset-kbd-color:         var(--aux-dark);
+  --md-typeset-kbd-border-color:  var(--aux-mid);
+  --md-typeset-table-color:       var(--aux-mid);
+  --md-typeset-th-color:          var(--aux-mid);
+  --md-typeset-tr-color:          var(--bg);
+
+  /* ===== 页脚 ===== */
+  --md-footer-fg-color:           var(--aux-lit);
+  --md-footer-fg-color--light:    var(--aux-mid);
+  --md-footer-bg-color:           var(--aux-dark);
+  --md-footer-bg-color--dark:     var(--aux-dark);
+
+  /* ===== 阴影 / 遮罩 ===== */
+  --md-overlay-color:             rgba(0, 0, 0, 0.3);
+
+  /* ===== 色相 ===== */
+  --md-hue: 160;
+}
+
+/* ------------------------------------------------------------------------
+   交互细节
+   ------------------------------------------------------------------------ */
+
+/* 顶栏标题 */
+.md-ellipsis {
+  color: var(--text) !important;
+}
+
+/* 所有标题 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--theme);
+}
+
+/* 正文链接：蓝色背景 + 白色文字 */
+.md-typeset a {
+  background: var(--link);
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--theme);
+  background-color: var(--bg);
+}
+
+/* 页脚链接：蓝色背景 + 白色文字，悬浮青色 */
+.md-footer a {
+  background: var(--link) !important;
+  color: var(--text) !important;
+  transition: all 0.2s ease;
+}
+
+.md-footer a:hover {
+  color: var(--theme) !important;
+  background-color: var(--aux-dark) !important;
+}
+
+/* 导航标题 */
+.md-nav__title {
+  background: transparent !important;
+  color: var(--theme) !important;
+}
+
+/* 导航链接：无背景 */
+.md-nav__link {
+  background: transparent;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--theme) !important;
+}
+
+/* 搜索框焦点 */
+.md-search__form:focus-within {
+  border-color: var(--theme);
+  box-shadow: 0 0 0 2px rgba(108, 255, 202, 0.25);
+}
+
+/* 代码行号 */
+.md-typeset .codehilite .linenos,
+.md-typeset .highlight .linenos {
+  color: var(--aux-mid);
+}
+
+/* 标签 / 按钮悬浮 */
+.md-tabs__link:hover,
+.md-button:hover {
+  opacity: 0.85;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--theme); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--link); }

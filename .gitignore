@@ -1,0 +1,5 @@
+# darwin
+.DS_Store
+
+# mkdocs
+site/
