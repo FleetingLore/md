@@ -3,7 +3,18 @@ site_url: https://fleetinglore.github.io/md
 
 # 在此处指定目录
 nav:
-  - example: index.md
+  - 电子技术基础  模拟部分: index.md
+  - 1  绪论: 1.md
+  - 2  运算放大器: 2.md
+  - 3  二极管及其基本电路: 3.md
+  - 4  场效应管及其放大电路: 4.md
+  - 5  双结型三极管 (BJT) 及其放大电路: 5.md
+  - 6  频率响应: 6.md
+  - 7  模拟集成电路: 7.md
+  - 8  反馈放大电路: 8.md
+  - 9  功率放大电路: 9.md
+  - 10  信号处理与信号产生电路: 10.md
+  - 11  直流稳压电源: 11.md
 
 theme:
   name: material
