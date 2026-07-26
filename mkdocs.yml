@@ -40,9 +40,16 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - attr_list
-  - pymdownx.emoji # 可选：支持表情符号
-  - footnotes # 可选：支持脚注
+  - pymdownx.emoji
+  - footnotes
+  - pymdownx.superfences
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/spice-enhance.js?v=2
+
+plugins:
+  - search
+  - macros:
+      module_name: macros

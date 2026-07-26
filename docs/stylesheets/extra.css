@@ -129,3 +129,179 @@
 ::-webkit-scrollbar-track  { background: var(--bg); }
 ::-webkit-scrollbar-thumb  { background: var(--aux-lit); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--link); }
+
+/* ---- SPICE & Circuit blocks ---- */
+
+.circuit-container iframe {
+  display: block;
+  background: #fff;
+}
+
+.spice-block {
+  margin: 1.2rem 0;
+  padding: 0 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.spice-block details {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.spice-block details summary {
+  background-color: transparent !important;
+}
+
+.spice-block summary::before {
+  background-color: var(--aux-mid) !important;
+}
+
+.spice-block summary {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--aux-lit);
+  background: rgba(255,255,255,0.03);
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.spice-block summary:hover {
+  color: var(--theme);
+}
+
+.spice-netlist,
+.spice-output {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.spice-netlist code,
+.spice-output code,
+textarea.spice-netlist {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+textarea.spice-netlist {
+  display: block;
+  width: 100%;
+  min-height: 6rem;
+  padding: 0.772em 1.176em;
+  background: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: var(--md-code-font-family);
+  box-sizing: border-box;
+}
+
+.spice-output code {
+  color: var(--aux-lit);
+}
+
+.spice-success {
+  color: #6cffca;
+  font-weight: normal;
+}
+
+.spice-error {
+  color: #ff6c6c;
+  font-weight: normal;
+}
+
+.spice-warning {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  color: #ffb86c;
+  background: rgba(255, 184, 108, 0.08);
+}
+
+.spice-data-link {
+  display: block;
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  color: var(--link) !important;
+  background: rgba(255,255,255,0.02) !important;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.spice-data-link:hover {
+  color: var(--theme) !important;
+  background: transparent !important;
+}
+
+/* ---- SPICE toolbar ---- */
+
+.spice-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.02);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0.3rem 1.176em;
+  box-sizing: border-box;
+}
+
+.spice-toolbar-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--aux-lit);
+  padding-top: 0.15rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spice-toolbar-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.spice-toolbar-title.modified {
+  color: var(--theme) !important;
+}
+
+.spice-toolbar + pre {
+  margin-top: 0 !important;
+}
+
+
+
+.spice-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--aux-lit);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.spice-toolbar button:hover {
+  color: var(--theme);
+}
+
+/* ---- chart / data button fade ---- */
+.spice-chart-btn,
+.spice-data-btn {
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+

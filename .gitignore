@@ -6,3 +6,7 @@ site/
 
 # heihui
 password
+
+# python
+__pycache__
+components/
