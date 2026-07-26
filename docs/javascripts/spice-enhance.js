@@ -17,7 +17,7 @@ document$.subscribe(() => {
   });
 });
 
-var API = (typeof window.SPICE_API !== 'undefined' && window.SPICE_API) ? window.SPICE_API : '';
+var API = (document.querySelector('meta[name="spice-api"]')||{}).content||'';
 
 /* ================================================================ */
 const CHECK_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';

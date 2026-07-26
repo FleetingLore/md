@@ -254,16 +254,6 @@ def _make_tran_svg(netlist, node):
 from macros_schemdraw import schemdraw_svg
 
 
-def on_pre_build_macros(env):
-    """Write API config before mkdocs copies files."""
-    api = env.conf['extra']['spice_api']
-    path = os.path.join(env.project_dir, 'docs', 'javascripts', 'spice-config.js')
-    with open(path, 'w') as f:
-        f.write('window.SPICE_API="'+api+'";\n')
-
-def on_post_build(env):
-    pass  # kept for compatibility, actual work in on_pre_build_macros
-
 # ============================================================================
 def define_env(env):
     @env.macro
