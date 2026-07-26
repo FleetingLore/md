@@ -254,9 +254,16 @@ def _make_tran_svg(netlist, node):
 from macros_schemdraw import schemdraw_svg
 
 
+def on_post_build(env):
+    """Write API config into built site."""
+    api = env.conf['extra']['spice_api']
+    path = os.path.join(env.project_dir, 'site', 'javascripts', 'spice-config.js')
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w') as f:
+        f.write('window.SPICE_API="'+api+'";\n')
+
 # ============================================================================
 def define_env(env):
-
     @env.macro
     def circuit(data, width="100%", height=500):
         return (f'<div class="circuit-container"><iframe src="{CIRCUITJS_URL}?ctz={data.strip()}" '

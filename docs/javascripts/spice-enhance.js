@@ -17,6 +17,8 @@ document$.subscribe(() => {
   });
 });
 
+var API = (typeof window.SPICE_API !== 'undefined' && window.SPICE_API) ? window.SPICE_API : '';
+
 /* ================================================================ */
 const CHECK_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
 
@@ -137,7 +139,7 @@ function updateSimButtons(block, netlist) {
     btn.onclick = async () => {
       showConnBar(); updateConnBar('发送请求...');
       try {
-        var resp = await fetch('/raw', { method: 'POST', body: netlist });
+        var resp = await fetch(API+'/raw', { method: 'POST', body: netlist });
         updateConnBar('接收中...');
         if (!resp.ok) { updateConnBar('HTTP '+resp.status+' 错误'); setTimeout(removeConnBar,3000); return; }
         var txt = await resp.text();
@@ -155,7 +157,7 @@ function updateSimButtons(block, netlist) {
     btn.onclick = async () => {
       showConnBar(); updateConnBar('发送请求...');
       try {
-        var resp = await fetch('/render', { method: 'POST', body: netlist });
+        var resp = await fetch(API+'/render', { method: 'POST', body: netlist });
         updateConnBar('接收中...');
         if (!resp.ok) { updateConnBar('HTTP '+resp.status+' 错误'); setTimeout(removeConnBar,3000); return; }
         var svg = await resp.text();
