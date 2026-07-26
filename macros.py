@@ -10,6 +10,7 @@ Macros:
 
 import subprocess, tempfile, os, shutil, re, hashlib, textwrap, base64, io, sys, importlib
 from pathlib import Path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 CIRCUITJS_URL = "https://www.falstad.com/circuit/circuitjs.html"
 TIMEOUT_S     = 30
@@ -250,6 +251,9 @@ def _make_tran_svg(netlist, node):
         return buf.getvalue(), _clean_output(stdout + "\n" + stderr)
 
 
+from macros_schemdraw import schemdraw_svg
+
+
 # ============================================================================
 def define_env(env):
 
@@ -289,7 +293,6 @@ def define_env(env):
     @env.macro
     def sch(name):
         try:
-            from macros_schemdraw import schemdraw_svg
             uri = schemdraw_svg(env.project_dir, name)
             return f'<img src="{uri}" style="max-width:100%" loading="lazy" alt="{name}">'
         except Exception as e:
