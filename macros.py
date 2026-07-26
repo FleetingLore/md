@@ -8,8 +8,7 @@ Macros:
   {{ tran(netlist, node) }} → Transient waveform plot + toolbar
 """
 
-import subprocess, tempfile, os, shutil, re, hashlib, textwrap, base64, io, sys, importlib
-from pathlib import Path
+import subprocess, tempfile, os, shutil, re, textwrap, base64, io, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 CIRCUITJS_URL = "https://www.falstad.com/circuit/circuitjs.html"
@@ -296,4 +295,3 @@ def define_env(env):
             return f'<img src="{uri}" style="max-width:100%" loading="lazy" alt="{name}">'
         except Exception as e:
             return f'<div class="spice-warning">⚠️ sch({name}): {str(e)}</div>'
-
