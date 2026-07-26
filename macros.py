@@ -255,10 +255,9 @@ from macros_schemdraw import schemdraw_svg
 
 
 def on_post_build(env):
-    """Write API config into built site."""
+    """Write API config – regenerates docs/ file for future builds."""
     api = env.conf['extra']['spice_api']
-    path = os.path.join(env.project_dir, 'site', 'javascripts', 'spice-config.js')
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    path = os.path.join(env.project_dir, 'docs', 'javascripts', 'spice-config.js')
     with open(path, 'w') as f:
         f.write('window.SPICE_API="'+api+'";\n')
 
